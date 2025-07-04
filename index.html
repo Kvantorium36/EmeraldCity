@@ -1,13 +1,277 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<title>Изумрудный город от Инженерных каникул (лето 2025)</title>
-<style></style>
-<link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7 сайтов об Изумрудном городе</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #50C878, #2E8B57);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        .subtitle {
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 10px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .search-box {
+            flex-grow: 1;
+            max-width: 500px;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #50C878;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .random-btn {
+            padding: 10px 20px;
+            background: #FFD700;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        .random-btn:hover {
+            background: #FFC000;
+            transform: translateY(-2px);
+        }
+        .site-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .site-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border-top: 4px solid #50C878;
+        }
+        .site-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .site-image {
+            height: 160px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+        }
+        .site-info {
+            padding: 20px;
+        }
+        .site-title {
+            color: #2E8B57;
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+        .site-author {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        .author-icon {
+            margin-right: 8px;
+            color: #1E90FF;
+        }
+        .site-description {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        .visit-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #50C878;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .visit-btn:hover {
+            background: #3CB371;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-box {
+                max-width: 100%;
+            }
+            .random-btn {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-<h1>"Изумрудный город"</h1>
+    <header>
+        <div class="container">
+            <h1>7 сайтов об Изумрудном городе</h1>
+            <p class="subtitle">Коллекция проектов, созданных участниками сообщества</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="controls">
+            <div class="search-box">
+                <input type="text" placeholder="Поиск по названию или автору..." id="searchInput">
+            </div>
+        </div>
+
+        <div class="site-grid" id="siteGrid">
+            
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Сообщество поклонников Изумрудного города</p>
+		 <p>Связь с админом сайта: <a href="https://t.me/t5kxu" style="color: var(--emerald);">@t5kxu</a></p>
+    </footer>
+
+    <script>
+       
+        const sites = [
+             {
+					title: "Название сайта",
+					author: "Бородин Владимир",
+					url: "1.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Доровская София",
+					url: "3.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Иванько Егор",
+					url: "8.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Неупокоев Артём, Кобзистый Илья, Путилин Егор",
+					url: "6.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Лексин Сергей",
+					description: "Описание сайта",
+					url: "2.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Олиниченко Ярослав, Щукин Даниэль",
+					description: "Описание сайта",
+					url: "7.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Сысоев Александр",
+					description: "Описание сайта",
+					url: "5.html",
+            	    image: "URL изображения"
+             },
+			 {
+					title: "Название сайта",
+					author: "Масалытин Александр",
+					description: "Описание сайта",
+					url: "4.html",
+            	    image: "URL изображения"
+             },
+			 
+        ];
+
+        function displaySites(sitesToDisplay) {
+            const siteGrid = document.getElementById('siteGrid');
+            siteGrid.innerHTML = '';
+            
+            sitesToDisplay.forEach(site => {
+                const card = document.createElement('div');
+                card.className = 'site-card';
+                card.innerHTML = `
+                    <div class="site-image">
+                        <img src="${site.image}" alt="${site.title}" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="site-info">
+                        <h3 class="site-title">${site.title}</h3>
+                        <div class="site-author">
+                            <span class="author-icon">👤</span>
+                            <span>${site.author}</span>
+                        </div>
+                        <p class="site-description">${site.description}</p>
+                        <a href="${site.url}" class="visit-btn" target="_blank">Посетить сайт</a>
+                    </div>
+                `;
+                siteGrid.appendChild(card);
+            });
+        }
+
+        
+        displaySites(sites);
+
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const filteredSites = sites.filter(site => 
+                site.title.toLowerCase().includes(searchTerm) || 
+                site.author.toLowerCase().includes(searchTerm) ||
+                site.description.toLowerCase().includes(searchTerm)
+            );
+            displaySites(filteredSites);
+        });
+    </script>
 </body>
 </html>

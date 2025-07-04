@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волшебники Изумрудного города</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #81c784, #4caf50);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        nav {
+            background-color: #2e7d32;
+            padding: 1rem;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav li {
+            margin: 0 1rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: #81c784;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .hero {
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            z-index: 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.4);
+            border-radius: 8px;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffeb3b;
+            color: #2e7d32;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            background-color: #fdd835;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .characters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .character-card {
+            flex: 1 1 300px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .character-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .character-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .character-card:hover .character-img img {
+            transform: scale(1.05);
+        }
+        
+        .character-info {
+            padding: 1.5rem;
+        }
+        
+        .character-info h3 {
+            margin-top: 0;
+            color: #1b5e20;
+        }
+        
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav li {
+                margin: 0.5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Волшебники Изумрудного города</div>
+        <p>Добро пожаловать в мир чудес и приключений!</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">О городе</a></li>
+            <li><a href="#characters">Персонажи</a></li>
+            <li><a href="#magic">Магия</a></li>
+            <li><a href="#history">История</a></li>
+            <li><a href="#visit">Как посетить</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <section class="hero">
+            <img src="IMG/kandinsky-download-1751355497673.png" alt="Изумрудный город">
+            <div class="hero-content">
+                <h1>Откройте врата в Изумрудный город</h1>
+                <a href="#visit" class="btn">Узнать как попасть</a>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2>Об Изумрудном городе</h2>
+            <p>Изумрудный город — волшебное место, где исполняются мечты, а чудеса становятся реальностью. Основанный великим волшебником Гудвином, город поражает своей красотой и магической атмосферой. Все здания здесь построены из изумрудов, а улицы вымощены золотыми кирпичами.</p>
+            <p>Город окружён огромной стеной с воротами, которые открываются только для тех, кто носит зелёные очки — это защищает жителей от ослепительного блеска изумрудов.</p>
+        </section>
+        
+        <section id="characters">
+            <h2>Знаменитые жители</h2>
+            <div class="characters">
+                <div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/fd6ba1a5570f11f0b5c65a2897f2e8c2_1.jpg" alt="Великий и Ужасный Гудвин">
+                    </div>
+                    <div class="character-info">
+                        <h3>Великий и Ужасный Гудвин</h3>
+                        <p>Верховный правитель Изумрудного города, мудрый волшебник (хотя на самом деле бывший воздухоплаватель из Канзаса).</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/5eb22989571011f097a102e72d7a45e9_1.jpg" alt="Элли Смит">
+                    </div>
+                    <div class="character-info">
+                        <h3>Элли Смит</h3>
+                        <p>Девочка из Канзаса, случайно попавшая в Волшебную страну. Именно она помогла Гудвину вернуться домой.</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/5420201775425779156.jpg" alt="Страшила">
+                    </div>
+                    <div class="character-info">
+                        <h3>Страшила</h3>
+                        <p>Добрый и мудрый правитель Изумрудного города после отъезда Гудвина. Когда-то был просто соломенным чучелом.</p>
+                    </div>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/7e830551570f11f0a0214e4a591835e2_1.jpg" alt="Железный Дровосек">
+                    </div>
+                    <div class="character-info">
+                        <h3>Железный Дровосек</h3>
+                        <p>Бывший лесоруб, превращённый злой колдуньей в железного человека. Обладает добрым сердцем и возглавляет Фиолетовую страну.</p>
+                    </div>
+                </div>
+				<div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/5415680231425044103.jpg" alt="Тотошка">
+                    </div>
+                    <div class="character-info">
+                        <h3>Тотошка (Тотоний)</h3>
+                        <p>Верный друг Элли Смит.</p>
+                    </div>
+                </div>
+				<div class="character-card">
+                    <div class="character-img">
+                        <img src="IMG/5420201775425779157.jpg" alt="Лев">
+                    </div>
+                    <div class="character-info">
+                        <h3>Тотошка (Тотоний)</h3>
+                        <p>Лев - царь зверей, он очень труслив.</p>
+                    </div>
+                </div>
+				<div class="character-card" width="50%">
+                    <div class="character-img">
+                        <img src="IMG/5420201775425779158.jpg" alt="Птица">
+                    </div>
+                    <div class="character-info">
+                        <h3>Коршун</h3>
+                        <p>Верный питомец злой королевы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="magic">
+            <h2>Магия Изумрудного города</h2>
+            <p>Волшебство пронизывает каждый уголок города. Здесь можно встретить:</p>
+            <ul>
+                <li>Летучих обезьян, исполняющих приказы владельца золотой шапки</li>
+                <li>Волшебные серебряные башмачки, способные переносить владельца на большие расстояния</li>
+                <li>Живую воду, возвращающую жизнь неживым предметам</li>
+                <li>Многочисленные заклинания и зелья, созданные местными волшебниками</li>
+            </ul>
+        </section>
+        
+        <section id="history">
+            <h2>История создания</h2>
+            <p>Изумрудный город был построен Гудвином после того, как его воздушный шар случайно приземлился в Волшебной стране. Используя хитрость и знания из нашего мира, он создал иллюзию могущественного волшебника и построил великолепный город, став его правителем.</p>
+            <p>Позже город прославился благодаря приключениям Элли и её друзей, которые разоблачили "великого и ужасного" Гудвина, но сохранили его наследие.</p>
+        </section>
+        
+        <section id="visit">
+            <h2>Как посетить Изумрудный город</h2>
+            <p>Чтобы попасть в Изумрудный город, вам потребуется:</p>
+            <ol>
+                <li>Найти жёлтую кирпичную дорогу (начинается где-то в Канзасе)</li>
+                <li>Пройти через Голубую страну жевунов</li>
+                <li>Преодолеть маковое поле (осторожно — оно усыпляет!)</li>
+                <li>Достигнуть ворот города и надеть зелёные очки</li>
+            </ol>
+            <p>Предупреждение: путешествие может быть опасным — берегитесь злых колдуний и других волшебных существ!</p>
+        </section>
+    </div>
+    
+    <footer>
+        <p>© 2025 Изумрудный город. Никто не защищеён волшебством.</p>
+        <p>Для связи используйте магический кристалл или отправьте сову с письмом.</p>
+    </footer>
+	
+<script>
+
+document.addEventListener('keydown', function(e) {
+    
+    if (e.ctrlKey && e.altKey && e.code === 'KeyG') {
+        
+        const msg = document.createElement('div');
+        msg.innerHTML = `
+            <div style="
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4CAF50;
+                color: white;
+                padding: 15px;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,0.5);
+                z-index: 9999;
+            ">
+                🔮 Волшебство активировано! Открываю секретное видео...
+            </div>
+        `;
+        document.body.appendChild(msg);
+        
+        setTimeout(() => msg.remove(), 3000);
+              
+        window.location.href = 'https://rutube.ru/video/ae270b92ece48a52445cd6b5698d8599/?r=wd';
+    }
+});
+</script>
+</body>
+</html>
